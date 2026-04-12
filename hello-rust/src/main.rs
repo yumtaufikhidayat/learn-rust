@@ -1,14 +1,14 @@
 fn main() {
-    // println!("Hello, world!");
-    // let result = add(5, 3);
-    // println!("The sum is: {}", result);
+    println!("Hello, world!");
+    let result = add(5, 3);
+    println!("The sum is: {}", result);
 
-    // let nama_user = "Taufik"; // Ini tipenya &str
-    // let message = hello(nama_user);
-    // println!("{}", message);
+    let nama_user = "Taufik"; // Ini tipenya &str
+    let message = hello(nama_user);
+    println!("{}", message);
 
-    // let message_to_show = "This is a message to show.";
-    // show_message(message_to_show);
+    let message_to_show = "This is a message to show.";
+    show_message(message_to_show);
 
     let radius: f32 = 4.0;
     let luas = luas_lingkaran(radius);
