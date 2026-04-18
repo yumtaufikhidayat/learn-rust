@@ -1,29 +1,35 @@
 mod ownership_borrowing;
+mod enum_ip_address_kind;
+
 use ownership_borrowing::*;
+use enum_ip_address_kind::IpAddressKind;
+
 
 fn main() {
-    println!("Hello, world!");
-    let result = add(5, 3);
-    println!("The sum is: {}", result);
+    // println!("Hello, world!");
+    // let result = add(5, 3);
+    // println!("The sum is: {}", result);
 
-    let nama_user = "Taufik"; // Ini tipenya &str
-    let message = hello(nama_user);
-    println!("{}", message);
+    // let nama_user = "Taufik"; // Ini tipenya &str
+    // let message = hello(nama_user);
+    // println!("{}", message);
 
-    let message_to_show = "This is a message to show.";
-    show_message(message_to_show);
+    // let message_to_show = "This is a message to show.";
+    // show_message(message_to_show);
 
-    let radius: f32 = 4.0;
-    let luas = luas_lingkaran(radius);
+    // let radius: f32 = 4.0;
+    // let luas = luas_lingkaran(radius);
 
-    if radius > 0.0 {
-        println!("Luas lingkaran dengan jari-jari {} adalah {}", radius, luas);
-    } else {
-        println!("Jari-jari harus lebih besar dari 0");
-    }
+    // if radius > 0.0 {
+    //     println!("Luas lingkaran dengan jari-jari {} adalah {}", radius, luas);
+    // } else {
+    //     println!("Jari-jari harus lebih besar dari 0");
+    // }
 
-    loop_sample([1, 2, 3, 4, 5]);
-    match_sample(radius);
+    // loop_sample([1, 2, 3, 4, 5]);
+    // match_sample(radius);
+
+    use_enum();
 }
 
 fn add(a: i32, b: i32) -> i32 {
@@ -80,3 +86,18 @@ fn match_sample(radius: f32) {
 * Kecil
 * 
 */
+
+fn use_enum() {
+    let four = IpAddressKind::V4;
+    let six = IpAddressKind::V6;
+
+    route_ip_address(four);
+    route_ip_address(six);
+}
+
+fn route_ip_address(ip_kind: IpAddressKind) {
+    match ip_kind {
+        IpAddressKind::V4 => println!("Routing IPv4 address"),
+        IpAddressKind::V6 => println!("Routing IPv6 address"),
+    }
+}
