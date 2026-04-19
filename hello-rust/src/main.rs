@@ -3,7 +3,9 @@ mod enum_ip_address_kind;
 
 use ownership_borrowing::*;
 use enum_ip_address_kind::IpAddressKind;
-
+use enum_ip_address_kind::IpAddress;
+use enum_ip_address_kind::IpAddresses;
+use enum_ip_address_kind::TrafficLight;
 
 fn main() {
     // println!("Hello, world!");
@@ -30,6 +32,11 @@ fn main() {
     // match_sample(radius);
 
     use_enum();
+    
+    route(IpAddressKind::V4);
+    route(IpAddressKind::V6);
+
+    traffic_light_enum();
 }
 
 fn add(a: i32, b: i32) -> i32 {
@@ -99,5 +106,44 @@ fn route_ip_address(ip_kind: IpAddressKind) {
     match ip_kind {
         IpAddressKind::V4 => println!("Routing IPv4 address"),
         IpAddressKind::V6 => println!("Routing IPv6 address"),
+    }
+}
+
+fn enum_example() {
+    let four = IpAddressKind::V4;
+    let six = IpAddressKind::V6;
+}
+
+fn route(ip_kind: IpAddressKind) {
+    let home = IpAddress {
+        kind: IpAddressKind::V4,
+        address: String::from("127.0.0.1"),
+    };
+
+    let loopback = IpAddress {
+        kind: IpAddressKind::V6,
+        address: String::from("::1"),
+    };
+}
+
+fn uses_enum_ip_addresses() {
+    let home = IpAddresses::V4(String::from("127.0.0.1"));
+    let loopback = IpAddresses::V6(String::from("::1"));
+}
+
+fn traffic_light_enum() {
+    let light = TrafficLight::Yellow;
+    
+    match light {
+        TrafficLight::Red => {
+            print!("Lampu merah, berhenti!")
+        }
+        TrafficLight::Yellow => {
+            print!("Lampu kuning, harap hati-hati.")
+        }
+        TrafficLight::Green => {
+            print!("Lampu hijau, silakan jalan.")
+        }
+    
     }
 }
