@@ -6,6 +6,7 @@ use enum_ip_address_kind::IpAddressKind;
 use enum_ip_address_kind::IpAddress;
 use enum_ip_address_kind::IpAddresses;
 use enum_ip_address_kind::TrafficLight;
+use std::collections::HashMap;
 
 fn main() {
     // println!("Hello, world!");
@@ -37,6 +38,8 @@ fn main() {
     route(IpAddressKind::V6);
 
     traffic_light_enum();
+
+    use_hash_map();
 }
 
 fn add(a: i32, b: i32) -> i32 {
@@ -136,14 +139,40 @@ fn traffic_light_enum() {
     
     match light {
         TrafficLight::Red => {
-            print!("Lampu merah, berhenti!")
+            println!("Lampu merah, berhenti!")
         }
         TrafficLight::Yellow => {
-            print!("Lampu kuning, harap hati-hati.")
+            println!("Lampu kuning, harap hati-hati.")
         }
         TrafficLight::Green => {
-            print!("Lampu hijau, silakan jalan.")
+            println!("Lampu hijau, silakan jalan.")
         }
     
+    }
+}
+
+fn use_hash_map() {
+    let mut scores = HashMap::new();
+
+    // Insert pasangan kunci-nilai ke HashMap
+    scores.insert(String::from("Blue"), 10);
+    scores.insert(String::from("Yellow"), 50);
+    print!("Scores: {:?}", scores);
+
+    // Overwrite nilai dengan kunci yang sama
+    scores.insert(String::from("Blue"), 25);
+    println!("Scores setelah tim Blue di-update: {:?}", scores);
+
+    // Mengambil nilai berdasarkan kunci
+    let team_name = String::from("Blue");
+    if let Some(score) = scores.get(&team_name) {
+        println!("Skor tim {} adalah {}", team_name, score)
+    }
+
+    // Mencoba mengambil dengan kunci yang tidak ada
+    let team_name_2 = String::from("Green");
+    match scores.get(&team_name_2) {
+        Some(_score) => println!("Skor tim {} adalah {:?}", team_name_2, scores),
+        None => println!("Tim {} tidak ditemukan.", team_name_2),
     }
 }
