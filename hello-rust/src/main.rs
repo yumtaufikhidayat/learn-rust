@@ -1,5 +1,6 @@
 mod ownership_borrowing;
 mod enum_ip_address_kind;
+mod user;
 
 use ownership_borrowing::*;
 use enum_ip_address_kind::IpAddressKind;
@@ -7,6 +8,7 @@ use enum_ip_address_kind::IpAddress;
 use enum_ip_address_kind::IpAddresses;
 use enum_ip_address_kind::TrafficLight;
 use std::collections::HashMap;
+use user::merge_all;
 
 fn main() {
     // println!("Hello, world!");
@@ -32,14 +34,16 @@ fn main() {
     // loop_sample([1, 2, 3, 4, 5]);
     // match_sample(radius);
 
-    use_enum();
+    // use_enum();
     
-    route(IpAddressKind::V4);
-    route(IpAddressKind::V6);
+    // route(IpAddressKind::V4);
+    // route(IpAddressKind::V6);
 
-    traffic_light_enum();
+    // traffic_light_enum();
 
-    use_hash_map();
+    // use_hash_map();
+
+    merge_all();
 }
 
 fn add(a: i32, b: i32) -> i32 {
