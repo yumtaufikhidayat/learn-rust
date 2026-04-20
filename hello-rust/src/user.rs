@@ -17,15 +17,18 @@
     -> "No discount"
 */
 
+// TODO: Buat struct User dengan name dan age
 struct User {
     name: String,
     age: u8
 }
 
+// TODO: Buat enum Status
 enum Status {
     Active, Inactive, Banned
 }
 
+// TODO: Implementasi describe_user
 fn describe_user(user: &User, status: &Status) {
     let status_user = match status {
         Status::Active => "Active",
@@ -35,6 +38,7 @@ fn describe_user(user: &User, status: &Status) {
     println!("{} ({}) is {}" , user.name, user.age, status_user)
 }
 
+// TODO: Jika umur >= 18 kembalikan 10, jika tidak 0
 fn calculate_discount(age: u8) -> i32 {
     if age >= 18 {
         18
@@ -43,6 +47,7 @@ fn calculate_discount(age: u8) -> i32 {
     }
 }
 
+// TODO: Cetak "Discount: 10%" jika diskon > 0, jika tidak "No discount"
 fn handle_discount(age: u8) {
     let discount = calculate_discount(age);
     if discount > 0 {
