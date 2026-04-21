@@ -1,6 +1,7 @@
 mod ownership_borrowing;
 mod enum_ip_address_kind;
 mod user;
+mod option;
 
 use ownership_borrowing::*;
 use enum_ip_address_kind::IpAddressKind;
@@ -9,6 +10,12 @@ use enum_ip_address_kind::IpAddresses;
 use enum_ip_address_kind::TrafficLight;
 use std::collections::HashMap;
 use user::merge_all;
+use option::use_find_char;
+use option::option_extract_value_some;
+use option::use_unwrap;
+use option::use_expect;
+use option::use_unwrap_or_else;
+use option::use_map;
 
 fn main() {
     // println!("Hello, world!");
@@ -43,7 +50,14 @@ fn main() {
 
     // use_hash_map();
 
-    merge_all();
+    // merge_all();
+
+    // use_find_char();
+    // option_extract_value_some();
+    // use_unwrap();
+    // use_expect();
+    // use_unwrap_or_else();
+    use_map();
 }
 
 fn add(a: i32, b: i32) -> i32 {
