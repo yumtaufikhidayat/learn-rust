@@ -2,6 +2,8 @@ mod ownership_borrowing;
 mod enum_ip_address_kind;
 mod user;
 mod option;
+mod result;
+mod error_propagation; 
 
 use ownership_borrowing::*;
 use enum_ip_address_kind::IpAddressKind;
@@ -16,6 +18,10 @@ use option::use_unwrap;
 use option::use_expect;
 use option::use_unwrap_or_else;
 use option::use_map;
+use result::use_result;
+use result::use_custom_result;
+use result::real_case_result;
+use error_propagation::use_double_number;
 
 fn main() {
     // println!("Hello, world!");
@@ -57,7 +63,13 @@ fn main() {
     // use_unwrap();
     // use_expect();
     // use_unwrap_or_else();
-    use_map();
+    // use_map();
+
+    // use_result();
+    // use_custom_result();
+    // real_case_result();
+    
+    use_double_number();
 }
 
 fn add(a: i32, b: i32) -> i32 {
