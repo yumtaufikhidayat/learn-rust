@@ -4,6 +4,7 @@ mod user;
 mod option;
 mod result;
 mod error_propagation; 
+mod handling_result_error;
 
 use ownership_borrowing::*;
 use enum_ip_address_kind::IpAddressKind;
@@ -22,6 +23,7 @@ use result::use_result;
 use result::use_custom_result;
 use result::real_case_result;
 use error_propagation::use_double_number;
+use handling_result_error::test_handling_result_error_main;
 
 fn main() {
     // println!("Hello, world!");
@@ -69,7 +71,9 @@ fn main() {
     // use_custom_result();
     // real_case_result();
     
-    use_double_number();
+    // use_double_number();
+
+    test_handling_result_error_main();
 }
 
 fn add(a: i32, b: i32) -> i32 {
