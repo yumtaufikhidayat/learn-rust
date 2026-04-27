@@ -119,3 +119,15 @@ impl Summary for Tweet {
         format!("{}: {}", self.username, self.content)
     }
 }
+
+trait Area {
+    fn area(&self) -> f64;
+}
+
+struct Rectangle { width: f64, height: f64 }
+
+impl Area for Rectangle {
+    fn area(&self) -> f64 {
+        self.width * self.height
+    }
+}
