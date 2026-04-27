@@ -6,6 +6,7 @@ mod result;
 mod error_propagation; 
 mod handling_result_error;
 mod generic;
+mod traits;
 
 use ownership_borrowing::*;
 use enum_ip_address_kind::IpAddressKind;
@@ -26,6 +27,13 @@ use result::real_case_result;
 use error_propagation::use_double_number;
 use handling_result_error::test_handling_result_error_main;
 use generic::use_generic;
+use generic::use_generic_that_return_first_of_list;
+use traits::use_traits_debug;
+use traits::use_traits_display;
+use traits::use_traits_eq_partial_eq;
+use traits::use_traits_partial_ord_sort_students;
+use traits::use_traits_clone;
+use traits::use_traits_iterator_counter;
 
 fn main() {
     // println!("Hello, world!");
@@ -77,7 +85,15 @@ fn main() {
 
     // test_handling_result_error_main();
 
-    use_generic();
+    // use_generic();
+    // use_generic_that_return_first_of_list();
+
+    use_traits_debug();
+    use_traits_display();
+    use_traits_eq_partial_eq();
+    use_traits_partial_ord_sort_students();
+    use_traits_clone();
+    use_traits_iterator_counter();
 }
 
 fn add(a: i32, b: i32) -> i32 {
