@@ -8,6 +8,7 @@ mod handling_result_error;
 mod generic;
 mod traits;
 mod practice_traits_generic_lifetime;
+mod modularization;
 
 use ownership_borrowing::*;
 use enum_ip_address_kind::IpAddressKind;
@@ -37,6 +38,7 @@ use traits::use_traits_clone;
 use traits::use_traits_iterator_counter;
 use traits::print_and_return_max;
 use practice_traits_generic_lifetime::practice_traits_generic_lifetime_main;
+use modularization::visibility::use_visibility_modularization;
 
 fn main() {
     // println!("Hello, world!");
@@ -99,7 +101,11 @@ fn main() {
     // use_traits_iterator_counter();
     // print_and_return_max(&[1, 2, 3, 4, 5]);
 
-    practice_traits_generic_lifetime_main();
+    // practice_traits_generic_lifetime_main();
+
+    // util::greet("Taufik");
+
+    use_visibility_modularization();
 }
 
 fn add(a: i32, b: i32) -> i32 {
@@ -234,5 +240,13 @@ fn use_hash_map() {
     match scores.get(&team_name_2) {
         Some(_score) => println!("Skor tim {} adalah {:?}", team_name_2, scores),
         None => println!("Tim {} tidak ditemukan.", team_name_2),
+    }
+}
+
+// Simpler way to use mod
+mod util {
+    // isi modul util, misal:
+    pub fn greet(name: &str) {
+        println!("Hello, {}!", name);
     }
 }
