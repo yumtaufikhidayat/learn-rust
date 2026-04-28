@@ -34,6 +34,7 @@ use traits::use_traits_eq_partial_eq;
 use traits::use_traits_partial_ord_sort_students;
 use traits::use_traits_clone;
 use traits::use_traits_iterator_counter;
+use traits::print_and_return_max;
 
 fn main() {
     // println!("Hello, world!");
@@ -94,6 +95,7 @@ fn main() {
     use_traits_partial_ord_sort_students();
     use_traits_clone();
     use_traits_iterator_counter();
+    print_and_return_max(&[1, 2, 3, 4, 5]);
 }
 
 fn add(a: i32, b: i32) -> i32 {

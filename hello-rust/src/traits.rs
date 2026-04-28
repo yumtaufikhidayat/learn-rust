@@ -1,4 +1,6 @@
 use std::fmt;
+use std::collections::VecDeque;
+use serde::Serialize;
 
 #[derive(Debug)]
 struct Point {
@@ -130,4 +132,28 @@ impl Area for Rectangle {
     fn area(&self) -> f64 {
         self.width * self.height
     }
+}
+
+// Ini AKAN ERROR!
+// impl Serialize for VecDeque<String> {
+//     fn serialize(&self, ... ) -> ... {
+//     // implementasi
+//     }
+// }
+
+// Trait bounds pada Generics
+// fn largest<T: PartialOrd>(list: &[T]) -> &T {
+//     // ... logic mencari elemen terbesar ...
+// }
+
+// Trait bounds pada Generics dengan Multiple Trait
+pub fn print_and_return_max<T: PartialOrd + std::fmt::Display>(list: &[T]) -> &T {
+    let mut max = &list[0];
+    for item in list {
+        if item > max {
+            max = item;
+        }
+    }
+    println!("Max value: {}", max);
+    max
 }
