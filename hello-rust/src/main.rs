@@ -7,6 +7,7 @@ mod error_propagation;
 mod handling_result_error;
 mod generic;
 mod traits;
+mod practice_traits_generic_lifetime;
 
 use ownership_borrowing::*;
 use enum_ip_address_kind::IpAddressKind;
@@ -35,6 +36,7 @@ use traits::use_traits_partial_ord_sort_students;
 use traits::use_traits_clone;
 use traits::use_traits_iterator_counter;
 use traits::print_and_return_max;
+use practice_traits_generic_lifetime::practice_traits_generic_lifetime_main;
 
 fn main() {
     // println!("Hello, world!");
@@ -89,13 +91,15 @@ fn main() {
     // use_generic();
     // use_generic_that_return_first_of_list();
 
-    use_traits_debug();
-    use_traits_display();
-    use_traits_eq_partial_eq();
-    use_traits_partial_ord_sort_students();
-    use_traits_clone();
-    use_traits_iterator_counter();
-    print_and_return_max(&[1, 2, 3, 4, 5]);
+    // use_traits_debug();
+    // use_traits_display();
+    // use_traits_eq_partial_eq();
+    // use_traits_partial_ord_sort_students();
+    // use_traits_clone();
+    // use_traits_iterator_counter();
+    // print_and_return_max(&[1, 2, 3, 4, 5]);
+
+    practice_traits_generic_lifetime_main();
 }
 
 fn add(a: i32, b: i32) -> i32 {
