@@ -41,6 +41,8 @@ use traits::print_and_return_max;
 use practice_traits_generic_lifetime::practice_traits_generic_lifetime_main;
 use modularization::visibility::use_visibility_modularization;
 use concurrency::use_concurrency;
+use concurrency::use_concurrency_mpsc_channel;
+use concurrency::use_concurrency_mutex;
 
 fn main() {
     // println!("Hello, world!");
@@ -110,6 +112,8 @@ fn main() {
     // use_visibility_modularization();
 
     use_concurrency();
+    use_concurrency_mpsc_channel();
+    use_concurrency_mutex();
 }
 
 fn add(a: i32, b: i32) -> i32 {
