@@ -9,6 +9,7 @@ mod generic;
 mod traits;
 mod practice_traits_generic_lifetime;
 mod modularization;
+mod concurrency;
 
 use ownership_borrowing::*;
 use enum_ip_address_kind::IpAddressKind;
@@ -39,6 +40,7 @@ use traits::use_traits_iterator_counter;
 use traits::print_and_return_max;
 use practice_traits_generic_lifetime::practice_traits_generic_lifetime_main;
 use modularization::visibility::use_visibility_modularization;
+use concurrency::use_concurrency;
 
 fn main() {
     // println!("Hello, world!");
@@ -105,7 +107,9 @@ fn main() {
 
     // util::greet("Taufik");
 
-    use_visibility_modularization();
+    // use_visibility_modularization();
+
+    use_concurrency();
 }
 
 fn add(a: i32, b: i32) -> i32 {
