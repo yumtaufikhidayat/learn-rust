@@ -10,6 +10,7 @@ mod traits;
 mod practice_traits_generic_lifetime;
 mod modularization;
 mod concurrency;
+mod macro_example;
 
 use ownership_borrowing::*;
 use enum_ip_address_kind::IpAddressKind;
@@ -43,6 +44,7 @@ use modularization::visibility::use_visibility_modularization;
 use concurrency::use_concurrency;
 use concurrency::use_concurrency_mpsc_channel;
 use concurrency::use_concurrency_mutex;
+use macro_example::use_macro;
 
 fn main() {
     // println!("Hello, world!");
@@ -111,9 +113,11 @@ fn main() {
 
     // use_visibility_modularization();
 
-    use_concurrency();
-    use_concurrency_mpsc_channel();
-    use_concurrency_mutex();
+    // use_concurrency();
+    // use_concurrency_mpsc_channel();
+    // use_concurrency_mutex();
+    
+    use_macro();
 }
 
 fn add(a: i32, b: i32) -> i32 {
